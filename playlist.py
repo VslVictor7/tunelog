@@ -1,5 +1,16 @@
 # build playlist depending on user interaction
 # song that user havent listened in 60 days, gets a chance in playlist
+#implemented genre injection, it maps out most song listened from specif genre and give them a high chance in playlist,
+#genre injection sometimes gives songs without metadata less priortiy
+#this can be fixed by listening that song once
+
+#tried to give song that user havent heared a lost of priorty
+
+#playlist  maps like this
+# repated song high priorty
+# fully listened less priorty
+# skipped less priorty
+#song from most listened genre high priorty
 
 
 from datetime import datetime
@@ -46,7 +57,6 @@ def score_song(user_id):
         song_id: sum(contribs) / len(contribs) for song_id, contribs in scores.items()
     }
 
-# ── Genre Injection ───────────────────────────────────────────────────────────
 
 
 def get_genre_distribution(user_id):

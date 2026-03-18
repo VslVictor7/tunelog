@@ -19,7 +19,7 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
-
+#for library sync
 def get_db_connection_lib():
     os.makedirs(os.path.dirname(DB_PATH_LIB), exist_ok=True)
     conn = sqlite3.connect(DB_PATH_LIB)

@@ -1,4 +1,10 @@
 # to fetch and create library database from navidrome
+# uses SEARCH3 api endpoint to build library database
+# works by runing a loop thourgh the api 
+
+#TODO : ADD CHECKS FOR IF SONG ALDREADY EXISTS WITH DIFFRENT METADATA
+# artist name : arijit singh ,
+# artist name : arjeet singh may be recorded diffrently
 
 
 import requests
@@ -18,6 +24,7 @@ def fetch_all_song():
     offset = 0
     batch = 100
 
+    #runs look until every song is in database
     while True:
         response = requests.get(url(batch , offset))
         data = response.json()
