@@ -44,14 +44,14 @@ def normalise_genre(raw):
     parts = raw.split("/")
     result = []
     for g in parts:
-        print(g)
+        # print(g)
 
         g = g.strip().lower()
         
-        print(g)
+        # print(g)
         g = GENRE_ALIASES.get(g, g)  # if not in aliases, keep as-is
         
-        print(g)
+        # print(g)
         if g not in result:
             result.append(g)
     return ",".join(result)
@@ -60,7 +60,7 @@ def normalise_genre(raw):
 def url(batch, offset):
     url = build_url("search3")
     song_url = url + f"&query=&songCount={batch}&songOffset={offset}"
-    print(song_url)
+    # print(song_url)
     return song_url
 
 

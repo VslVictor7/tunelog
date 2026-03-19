@@ -110,9 +110,9 @@ def Watcher():
             }
             # print(f"[NEW] {user_id} started: {entry['title']}")
 
-        else:
-            # same song still playing → don't touch start_time
-            print(f"[SAME] {user_id} still playing: {active[user_id]['title']}")
+        # else:
+        #     # same song still playing → don't touch start_time
+        #     print(f"[SAME] {user_id} still playing: {active[user_id]['title']}")
 
     current_users = {entry["username"] for entry in entries}
     for user_id in list(active.keys()):
